@@ -9,13 +9,14 @@ def arguments():
 
 parser = arguments()
 args = parser.parse_args(sys.argv[1:])
-list_file = open(args.list, 'r')
+
 
 if args.url == None or args.list == None:
     print('Example: python dirb -u http://example.com/ -l list.txt')
 
 else:
     if validators.url(args.url) == True:
+        list_file = open(args.list, 'r')
         url = args.url
         list = []
         dir_list = []
